@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Submit Restaurant Review
+{% endblock %}
+
+{% block main %}
+
+<img src="/static/icons/restaurant-icon.png" width="100" height="100" alt="">
+
+    <h5>Submit a Restaurant Review:</h5>
+    <form id="reviewForm" action="/submit.html" method="post" onsubmit="return validateForm()">
+        <p>
+            <label for="restaurant">Restaurant:</label>
+            <input id="restaurant" name="restaurant" type="text" required>
+        </p>
+        <p>
+            <label for="location">Location:</label>
+            <select class="mx-auto" name="location" id="location" style="width:auto;" required>
+                <option value="" selected disabled>Select an option</option>
+                {% for location in states %}
+                    <option value="{{ location }}">{{ location }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            <label for="rating">Rating:</label>
+            <input id="rating" name="rating" type="number" min="1" max="5" step="0.5" required>
+        </p>
+        <p>
+            <label for="visit_date">Date of Visit:</label>
+            <input id="visit_date" name="visit_date" type="date" required>
+        </p>
+        <p>
+            <label for="comment">Comment:</label><br>
+            <textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
+        </p>
+        <p>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </p>
+    </form>
+
+    <script>
+        function validateForm() {
+            var location = document.getElementById("location");
+            if (location.value == "") {
+                alert("Please select a location.");
+                return false;
+            }
+
+            var visitDate = document.getElementById("visit_date");
+            if (visitDate.value == "") {
+                alert("Please select a date of visit.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+{% endblock %}
+
+
+
+
+
+

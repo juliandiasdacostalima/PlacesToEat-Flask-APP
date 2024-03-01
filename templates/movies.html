@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Get Place Review
+{% endblock %}
+
+{% block main %}
+
+<img src="static/icons/restaurant-icon.png" width="100" height="100" alt="">
+
+    <h5>Browse a place:</h5>
+    <form action="/" method="post">
+        <p>
+            <label for="search_type">Search by:</label>
+            <select class="mx-auto" name="search_type" id="search_type" style="width:auto;">
+                <option value="">Select Option</option>
+                <option value="name">Name</option>
+                <option value="state">State</option>
+            </select>
+        </p>
+        <div id="name_search" style="display:none;">
+            <p>
+                <input autocomplete="off" autofocus name="place_name" placeholder="Place Name" type="text">
+            </p>
+        </div>
+        <div id="state_search" style="display:none;">
+            <p>
+                <label for="state">State:</label>
+                <select class="mx-auto" name="district" id="district" style="width:auto;">
+                    {% for state in states %}
+                        <option value="{{ state }}">{{ state }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+        </div>
+        <p>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </p>
+    </form>
+
+<script>
+document.getElementById('search_type').addEventListener('change', function() {
+    var searchType = this.value;
+    if (searchType === '') {
+        document.getElementById('name_search').style.display = 'none';
+        document.getElementById('state_search').style.display = 'none';
+    } else if (searchType === 'name') {
+        document.getElementById('name_search').style.display = 'block';
+        document.getElementById('state_search').style.display = 'none';
+    } else if (searchType === 'state') {
+        document.getElementById('name_search').style.display = 'none';
+        document.getElementById('state_search').style.display = 'block';
+    }
+});
+</script>
+
+<footer class="page-footer font-small blue">
+
+    <div class="footer-attribution text-center">
+        <a href="https://www.flaticon.com/free-icons/restaurant" title="restaurant icons">Restaurant icons created by Eucalyp - Flaticon</a>
+
+    </div>
+
+  </footer>
+    
+{% endblock %}
+

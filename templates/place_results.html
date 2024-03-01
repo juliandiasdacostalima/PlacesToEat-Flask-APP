@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Reviews for {{ place_name }}
+{% endblock %}
+
+{% block main %}
+    <h5>Reviews for {{ place_name }}:</h5>
+    {% if reviews %}
+        <ul class="review-list">
+            {% for review in reviews %}
+                <li class="review-item">
+                    <strong>Location:</strong> {{ review.location }}<br>
+                    <strong>Rating:</strong> {{ review.rating }}<br>  <!-- Corregido: Acceder al campo 'rating' directamente -->
+                    <strong>Date of Visit:</strong> {{ review.visit_date }}<br>
+                    <strong>Comment:</strong> {{ review.comment }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews found for {{ place_name }}.</p>
+    {% endif %}
+{% endblock %}
+
+
+
