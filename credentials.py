@@ -1,7 +1,7 @@
 import boto3
 def get_mongodb_credentials(parameter_name):
     try:
-        ssm_client = boto3.client('ssm')
+        ssm_client = boto3.client('ssm', region_name='us-east-1')
         response = ssm_client.get_parameter(Name=parameter_name, WithDecryption=True)
         credentials = response['Parameter']['Value']
         return credentials
