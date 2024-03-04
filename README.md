@@ -6,7 +6,7 @@ Places To Eat
 
 This project presents a complete web application developed with Python, Flask, and MongoDB Atlas, along with HTML (enhanced with Bootstrap) and CSS for styling. Serving as a versatile platform, it makes it easy to explore and evaluate various dining options across different districts within a city. Through its user-friendly interface, users can easily navigate restaurant listings, read existing reviews, share their own experiences, and discover the top-rated dining spots in each area.
 
-Features:
+#### Features
 Restaurant Discovery: Users can search for restaurants in specific districts of the city.
 Review Submission: The application allows users to submit reviews for restaurants, sharing their dining experiences with others.
 
@@ -45,7 +45,7 @@ Integration: The application integrates with MongoDB Atlas for seamless data sto
 |helpers.py| The get_best_places function in this script is designed to retrieve the best-rated restaurants within a specified district from a MongoDB database. By executing a predefined aggregation pipeline, it calculates the average ratings for restaurants in the given district and returns a sorted list of the top-rated establishments, along with their average ratings and visit counts.
 |insert_examples.py| The insert_reviews_from_file function facilitates the insertion of restaurant reviews stored in a JSON file into a MongoDB database. It streamlines the process of populating a MongoDB collection with review data, making it convenient for initializing or updating databases with sample reviews.
 
-###Text files###
+#### Text files
 | File | Description|
 | --- | --- |
 |examples.txt| This file contains examples to insert into MongoDB DataBase 
