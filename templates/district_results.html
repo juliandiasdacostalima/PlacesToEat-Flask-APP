@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mejores Restaurantes en {{ location }}</title>
+    <title>Best places to eat in {{ location }}</title>
     <link rel="stylesheet" href="/static/main.css">
 </head>
 <body>
     <div class="container">
-        <h1>Mejores Restaurantes en {{ location }}</h1>
+        <h1>Best places to eat in {{ location }}</h1>
         
         <ul>
-            {% for restaurante in mejores_restaurantes %}
+            {% for place in best_places %}
                 <li>
-                    <strong>Restaurante:</strong> {{ restaurante._id }}<br>
-                    <strong>Calificación promedio:</strong> {{ restaurante.average_rating }}<br>
-                    <strong>Cantidad visitas:</strong> {{ restaurante.count_visits }}
+                    <strong>Place:</strong> {{ place._id }}<br>
+                    <strong>Average rating:</strong> {{ place.average_rating }}<br>
+                    <strong>Visit count:</strong> {{ place.count_visits }}
                 </li>
             {% endfor %}
         </ul>
         
-        <a href="/">Volver</a>
+        <a href="/">Back</a>
     </div>
 </body>
 </html>

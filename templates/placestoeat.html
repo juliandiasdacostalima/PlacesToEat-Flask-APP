@@ -21,7 +21,7 @@
         <div id="name_search" style="display:none;">
             <p>
                 <input autocomplete="off" autofocus name="place_name" id="place_name" placeholder="Place Name" type="text">
-                <div id="autocomplete-suggestions"></div> <!-- Contenedor para las sugerencias de autocompletado -->
+                <div id="autocomplete-suggestions"></div> <!-- Container for autocomplete suggestions -->
             </p>
         </div>
         <div id="state_search" style="display:none;">
@@ -58,46 +58,46 @@ document.getElementById('search_type').addEventListener('change', function() {
 });
 
 document.getElementById('place_name').addEventListener('input', function() {
-    let query = this.value.trim(); // Obtener el valor del campo de búsqueda y eliminar espacios en blanco al principio y al final
+    let query = this.value.trim(); // Get the value of the search field and trim leading and trailing whitespaces
     let autocompleteSuggestionsDiv = document.getElementById('autocomplete-suggestions');
 
-    // Verificar si el valor del campo de búsqueda es vacío
+    // Check if the search field value is empty
     if (query.length === 0) {
-        autocompleteSuggestionsDiv.innerHTML = ''; // Limpiar el contenedor de sugerencias si no hay consulta
-        return; // Salir de la función si la consulta está vacía
+        autocompleteSuggestionsDiv.innerHTML = ''; // Clear the suggestions container if there is no query
+        return; // Exit the function if the query is empty
     }
 
-    // Enviar solicitud al servidor para obtener sugerencias de autocompletado
+    // Send request to server to fetch autocomplete suggestions
     fetch(`/autocomplete?query=${query}`)
         .then(response => response.json())
         .then(data => {
-            // Limpiar el contenedor de sugerencias
+            // Clear the suggestions container
             autocompleteSuggestionsDiv.innerHTML = '';
-            // Iterar sobre las sugerencias devueltas por el servidor y mostrarlas en el contenedor
+            // Iterate over suggestions returned by the server and display them in the container
             data.forEach(suggestion => {
-                // Crear un elemento de sugerencia cliclable
+                // Create a clickable suggestion element
                 let suggestionElement = document.createElement('p');
                 suggestionElement.textContent = suggestion;
                 suggestionElement.classList.add('autocomplete-suggestion');
-                // Agregar un estilo diferente para resaltar que las sugerencias son clicables
+                // Add a different style to highlight that suggestions are clickable
                 suggestionElement.style.cursor = 'pointer';
                 suggestionElement.style.backgroundColor = '#f2f2f2';
                 suggestionElement.style.padding = '5px';
                 suggestionElement.style.borderRadius = '5px';
                 suggestionElement.style.marginBottom = '5px';
-                // Agregar un evento de clic para insertar la sugerencia en el campo de búsqueda
+                // Add a click event to insert the suggestion into the search field
                 suggestionElement.addEventListener('click', function() {
                     document.getElementById('place_name').value = suggestion;
-                    autocompleteSuggestionsDiv.innerHTML = ''; // Limpiar el contenedor de sugerencias después de hacer clic en una sugerencia
+                    autocompleteSuggestionsDiv.innerHTML = ''; // Clear the suggestions container after clicking on a suggestion
                 });
-                // Agregar la sugerencia al contenedor de sugerencias
+                // Add the suggestion to the suggestions container
                 autocompleteSuggestionsDiv.appendChild(suggestionElement);
             });
         })
         .catch(error => {
             console.error('Error fetching autocomplete suggestions:', error);
-            // Manejar el error si ocurre al obtener las sugerencias de autocompletado
-            // Por ejemplo, podrías mostrar un mensaje de error al usuario
+            // Handle error if fetching autocomplete suggestions fails
+            // For example, you could show an error message to the user
         });
 });
 </script>
@@ -109,3 +109,4 @@ document.getElementById('place_name').addEventListener('input', function() {
 </footer>
     
 {% endblock %}
+

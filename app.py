@@ -8,17 +8,17 @@ from helpers import get_best_places
 
 app = Flask(__name__)
 
-# Obtener credenciales de MongoDB
-
+# Get MongoDB credentials
 mongodb_credentials = get_mongodb_credentials('mongodb_access')
 client = MongoClient(mongodb_credentials)
 
 db = client['placestoeat']
 reviews = db.reviews
 
+# List of districts in Málaga
 states = ["Centro", "Málaga Este", "Ciudad Jardín", "Bailén-Miraflores", "Palma-Palmilla", "Cruz del Humilladero", "Carretera de Cádiz", "Churriana", "Campanillas", "Puerto de la Torre", "Teatinos-Universidad"]
 
-
+# Endpoint for autocomplete functionality
 @app.route("/autocomplete", methods=["GET"])
 def autocomplete():
     query = request.args.get("query")
@@ -30,6 +30,7 @@ def autocomplete():
     else:
         return jsonify([]) 
 
+# Main route for displaying restaurant search results
 @app.route("/", methods=["GET", "POST"])
 def placestoeat():
     if request.method == "GET":
@@ -43,11 +44,12 @@ def placestoeat():
         return render_template("place_results.html", place_name=place_name, reviews=reviews_found)
     if district:
         best_places = get_best_places(district, client,db)
-        return render_template("district_results.html", location=district, mejores_restaurantes=best_places)
+        return render_template("district_results.html", location=district, best_places=best_places)
     else:
-        message = "You broke the app"
+        message = "Unknown error"
         return render_template("error.html", message=message)
 
+# Route for submitting restaurant reviews
 @app.route("/submit.html", methods=["GET", "POST"])
 def submit():
     if request.method == "GET":
@@ -60,13 +62,13 @@ def submit():
         visit_date = request.form.get("visit_date")
         comment = request.form.get("comment").lower()
 
-        # Validación del nombre del restaurante
+        # Validation for restaurant name
         regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
         if regex.search(restaurant) is not None:
             message = "Please enter a valid restaurant name."
             return render_template("error.html", message=message)
 
-        # Validación de la fecha de visita
+        # Validation for visit date
         try:
             visit_date = date.fromisoformat(visit_date)
         except ValueError:
@@ -85,9 +87,10 @@ def submit():
 
         return render_template("thank_you.html")
 
-
+# Run the Flask app
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
+
 
 
 
