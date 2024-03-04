@@ -9,11 +9,9 @@ from helpers import get_best_places
 app = Flask(__name__)
 
 # Obtener credenciales de MongoDB
-try:
-    client = MongoClient('mongodb+srv://jdiasdacostalima:GjRmfQSK6tPDdXeB@my-first-cluster.7bjtoy9.mongodb.net/?retryWrites=true&w=majority&appName=my-first-cluster')
-except:
-    mongodb_credentials = get_mongodb_credentials('mongodb_access')
-    client = MongoClient(mongodb_credentials)
+
+mongodb_credentials = get_mongodb_credentials('mongodb_access')
+client = MongoClient(mongodb_credentials)
 
 db = client['placestoeat']
 reviews = db.reviews
