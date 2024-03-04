@@ -14,7 +14,8 @@
             {% for restaurante in mejores_restaurantes %}
                 <li>
                     <strong>Restaurante:</strong> {{ restaurante._id }}<br>
-                    <strong>Calificación promedio:</strong> {{ restaurante.average_rating }}
+                    <strong>Calificación promedio:</strong> {{ restaurante.average_rating }}<br>
+                    <strong>Cantidad visitas:</strong> {{ restaurante.count_visits }}
                 </li>
             {% endfor %}
         </ul>

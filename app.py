@@ -1,36 +1,36 @@
 import re
 from datetime import date
-import datetime
 import boto3
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
-from helpers import get_best_places
 from credentials import get_mongodb_credentials
-from flask import jsonify
+from helpers import get_best_places
 
 app = Flask(__name__)
 
-client = MongoClient('mongodb+srv://jdiasdacostalima:GjRmfQSK6tPDdXeB@my-first-cluster.7bjtoy9.mongodb.net/?retryWrites=true&w=majority&appName=my-first-cluster')
+# Obtener credenciales de MongoDB
+try:
+    client = MongoClient('mongodb+srv://jdiasdacostalima:GjRmfQSK6tPDdXeB@my-first-cluster.7bjtoy9.mongodb.net/?retryWrites=true&w=majority&appName=my-first-cluster')
+except:
+    mongodb_credentials = get_mongodb_credentials('mongodb_access')
+    client = MongoClient(mongodb_credentials)
+
 db = client['placestoeat']
 reviews = db.reviews
-states = ["Centro", "Málaga Este", "Ciudad Jardín", "Bailén-Miraflores", "Palma-Palmilla", "Cruz del Humilladero", "Carretera de Cádiz", "Churriana", "Campanillas", "Puerto de la Torre", "Teatinos-Universidad"]
 
-#%%
+states = ["Centro", "Málaga Este", "Ciudad Jardín", "Bailén-Miraflores", "Palma-Palmilla", "Cruz del Humilladero", "Carretera de Cádiz", "Churriana", "Campanillas", "Puerto de la Torre", "Teatinos-Universidad"]
 
 
 @app.route("/autocomplete", methods=["GET"])
 def autocomplete():
     query = request.args.get("query")
     if query:
-        # Realiza la búsqueda de autocompletado en tu base de datos MongoDB
-        # Puedes buscar nombres de restaurantes que coincidan parcialmente con la cadena de consulta
         regex_query = "^" + re.escape(query)
         suggestions_cursor = reviews.distinct("restaurant", {"restaurant": {"$regex": regex_query, "$options": "i"}})
-        suggestions = list(suggestions_cursor)[:10]  # Limita las sugerencias a un máximo de 10
+        suggestions = list(suggestions_cursor)[:10]
         return jsonify(suggestions)
     else:
-        return jsonify([])  # Retorna una lista vacía si no hay una consulta válida
-#%%
+        return jsonify([]) 
 
 @app.route("/", methods=["GET", "POST"])
 def placestoeat():
@@ -44,8 +44,8 @@ def placestoeat():
         reviews_found = list(reviews.find({"restaurant": place_name}))
         return render_template("place_results.html", place_name=place_name, reviews=reviews_found)
     if district:
-        mejores_restaurantes = get_best_places(district, client,db, reviews)
-        return render_template("district_results.html", location=district, mejores_restaurantes=mejores_restaurantes)
+        best_places = get_best_places(district, client,db)
+        return render_template("district_results.html", location=district, mejores_restaurantes=best_places)
     else:
         message = "You broke the app"
         return render_template("error.html", message=message)

@@ -1,20 +1,20 @@
-{"restaurant": "Delicious Delights","location": "Centro","rating": {"$numberDouble":"4.0"},"visit_date": "2024-02-12","comment": "Amazing food and friendly staff!"}
-{"restaurant": "Taste of Paradise","location": "Málaga Este","rating": {"$numberDouble":"3.5"},"visit_date": "2024-02-05","comment": "Incredible seafood and beautiful view!"}
-{"restaurant": "Flavors Galore","location": "Ciudad Jardín","rating": {"$numberDouble":"4.5"},"visit_date": "2024-02-19","comment": "Delicious menu options and cozy atmosphere!"}
-{"restaurant": "Spice Route","location": "Bailén-Miraflores","rating": {"$numberDouble":"2.0"},"visit_date": "2024-02-10","comment": "Authentic flavors and attentive service!"}
-{"restaurant": "Ocean Breeze","location": "Palma-Palmilla","rating": {"$numberDouble":"1.5"},"visit_date": "2024-02-15","comment": "Fresh seafood and beachside ambiance!"}
-{"restaurant": "Savory Haven","location": "Cruz del Humilladero","rating": {"$numberDouble":"4.5"},"visit_date": "2024-02-22","comment": "Exquisite cuisine and elegant decor!"}
-{"restaurant": "Sunrise Cafe","location": "Carretera de Cádiz","rating": {"$numberDouble":"3.0"},"visit_date": "2024-02-08","comment": "Great breakfast options and friendly staff!"}
-{"restaurant": "Flame & Flavor","location": "Churriana","rating": {"$numberDouble":"4.0"},"visit_date": "2024-02-25","comment": "Tasty grilled dishes and lively atmosphere!"}
-{"restaurant": "Mediterranean Delights","location": "Campanillas","rating": {"$numberDouble":"2.5"},"visit_date": "2024-02-17","comment": "Rich flavors and welcoming staff!"}
-{"restaurant": "Gourmet Experience","location": "Puerto de la Torre","rating": {"$numberDouble":"3.5"},"visit_date": "2024-02-03","comment": "Fine dining experience with top-notch service!"}
-{"restaurant": "Street Food Fiesta","location": "Teatinos-Universidad","rating": {"$numberDouble":"4.0"},"visit_date": "2024-02-20","comment": "Vibrant food options and casual atmosphere!"}
-{"restaurant": "Coastal Retreat","location": "Málaga Este","rating": {"$numberDouble":"1.0"},"visit_date": "2024-02-14","comment": "Relaxing beachfront dining with excellent seafood!"}
-{"restaurant": "Urban Eats","location": "Centro","rating": {"$numberDouble":"2.5"},"visit_date": "2024-02-07","comment": "Varied menu and trendy atmosphere!"}
-{"restaurant": "Rooftop Delights","location": "Carretera de Cádiz","rating": {"$numberDouble":"4.5"},"visit_date": "2024-02-18","comment": "Scenic views and delicious cocktails!"}
-{"restaurant": "Fusion Flavors","location": "Churriana","rating": {"$numberDouble":"3.5"},"visit_date": "2024-02-11","comment": "Inventive dishes and friendly service!"}
-{"restaurant": "Culinary Corner","location": "Ciudad Jardín","rating": {"$numberDouble":"4.0"},"visit_date": "2024-02-23","comment": "Creative cuisine and elegant presentation!"}
-{"restaurant": "Seafront Serenity","location": "Palma-Palmilla","rating": {"$numberDouble":"2.0"},"visit_date": "2024-02-09","comment": "Tranquil setting with delectable seafood!"}
-{"restaurant": "Rustic Charm","location": "Teatinos-Universidad","rating": {"$numberDouble":"3.5"},"visit_date": "2024-02-21","comment": "Warm atmosphere and hearty dishes!"}
-{"restaurant": "Cafe Royale","location": "Bailén-Miraflores","rating": {"$numberDouble":"1.5"},"visit_date": "2024-02-16","comment": "Cozy cafe with delicious pastries!"}
-{"restaurant": "Dining Delights","location": "Puerto de la Torre","rating": {"$numberDouble":"3.0"},"visit_date": "2024-02-13","comment": "Excellent menu choices and welcoming ambiance!"}
+{"restaurant": "Delicious Delights", "location": "Centro", "rating": 8, "visit_date": "2024-02-12", "comment": "Amazing food and friendly staff!"}
+{"restaurant": "Taste of Paradise", "location": "Málaga Este", "rating": 7, "visit_date": "2024-02-05", "comment": "Incredible seafood and beautiful view!"}
+{"restaurant": "Flavors Galore", "location": "Ciudad Jardín", "rating": 9, "visit_date": "2024-02-19", "comment": "Delicious menu options and cozy atmosphere!"}
+{"restaurant": "Spice Route", "location": "Bailén-Miraflores", "rating": 4, "visit_date": "2024-02-10", "comment": "Authentic flavors and attentive service!"}
+{"restaurant": "Ocean Breeze", "location": "Palma-Palmilla", "rating": 3, "visit_date": "2024-02-15", "comment": "Fresh seafood and beachside ambiance!"}
+{"restaurant": "Savory Haven", "location": "Cruz del Humilladero", "rating": 9, "visit_date": "2024-02-22", "comment": "Exquisite cuisine and elegant decor!"}
+{"restaurant": "Sunrise Cafe", "location": "Carretera de Cádiz", "rating": 5, "visit_date": "2024-02-08", "comment": "Great breakfast options and friendly staff!"}
+{"restaurant": "Flame & Flavor", "location": "Churriana", "rating": 8, "visit_date": "2024-02-25", "comment": "Tasty grilled dishes and lively atmosphere!"}
+{"restaurant": "Mediterranean Delights", "location": "Campanillas", "rating": 5, "visit_date": "2024-02-17", "comment": "Rich flavors and welcoming staff!"}
+{"restaurant": "Gourmet Experience", "location": "Puerto de la Torre", "rating": 7, "visit_date": "2024-02-03", "comment": "Fine dining experience with top-notch service!"}
+{"restaurant": "Street Food Fiesta", "location": "Teatinos-Universidad", "rating": 8, "visit_date": "2024-02-20", "comment": "Vibrant food options and casual atmosphere!"}
+{"restaurant": "Coastal Retreat", "location": "Málaga Este", "rating": 1, "visit_date": "2024-02-14", "comment": "Relaxing beachfront dining with excellent seafood!"}
+{"restaurant": "Urban Eats", "location": "Centro", "rating": 3, "visit_date": "2024-02-07", "comment": "Varied menu and trendy atmosphere!"}
+{"restaurant": "Rooftop Delights", "location": "Carretera de Cádiz", "rating": 9, "visit_date": "2024-02-18", "comment": "Scenic views and delicious cocktails!"}
+{"restaurant": "Fusion Flavors", "location": "Churriana", "rating": 7, "visit_date": "2024-02-11", "comment": "Inventive dishes and friendly service!"}
+{"restaurant": "Culinary Corner", "location": "Ciudad Jardín", "rating": 8, "visit_date": "2024-02-23", "comment": "Creative cuisine and elegant presentation!"}
+{"restaurant": "Seafront Serenity", "location": "Palma-Palmilla", "rating": 3, "visit_date": "2024-02-09", "comment": "Tranquil setting with delectable seafood!"}
+{"restaurant": "Rustic Charm", "location": "Teatinos-Universidad", "rating": 7, "visit_date": "2024-02-21", "comment": "Warm atmosphere and hearty dishes!"}
+{"restaurant": "Cafe Royale", "location": "Bailén-Miraflores", "rating": 3, "visit_date": "2024-02-16", "comment": "Cozy cafe with delicious pastries!"}
+{"restaurant": "Dining Delights", "location": "Puerto de la Torre", "rating": 5, "visit_date": "2024-02-13", "comment": "Excellent menu choices and welcoming ambiance!"}
